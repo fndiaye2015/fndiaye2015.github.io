@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Fodé NDIAYE">
+  <meta name="description" content="#7DaysOfCodeChallenge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Currency Converter</title>
+</head>
+<body>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <a class="navbar-brand text-dark" href="#">Currency Converter</a>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="row"><h3 class="text-error" id="error-message"></h3></div>
+      <div class="row"><h3 class="text-info" id="message"></h3></div>
+      <div class="row"><h3 class="text-success" id="success-message"></h3></div>
+      <div class="row justify-content-center align-items-center main">
+        <div class="col border border-secondary p-5 justify-content-center bg-secondary">
+          <div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-4">
+                <select name="inputFromCountry" class="form-control" id="inputFromCountry">
+                  <option value=''>Select country</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text" id="fromCurrencySymbol">#</div>
+                    </div>
+                    <input
+                      min="0"
+                      value="0"
+                      name="inputFromAmount"
+                      type="number"
+                      class="form-control"
+                      id="inputFromAmount"
+                      placeholder="Amount in number">
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="form-row justify-content-center">
+              <div class="form-group col-md-4">
+                <select name="inputToCountry" class="form-control" id="inputToCountry">
+                  <option value=''>Select country</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text" id="toCurrencySymbol">#</div>
+                  </div>
+                  <input
+                    min="0"
+                    value="0"
+                    name="inputToAmount"
+                    type="number"
+                    class="form-control"
+                    id="inputToAmount"
+                    placeholder="Amount in number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row align-items-center justify-content-center m-3">
+            <div>
+              <button id="reset" name="reset" type="button" aria-label="Reset" class="btn btn-outline-light">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center align-items-center m-3" id='alert' style="display: none;">
+        <div class="alert alert-primary" role="alert">
+          <strong id='alert-message'></strong>
+          <div>
+            <button id='refresh' name="refresh" type="button" aria-label="Refresh" class="btn btn-outline-primary">
+              Refresh
+            </button>
+            <button id='dismiss' name="dismiss" type="button" aria-label="Dismiss" class="btn btn-outline-secondary">
+              Dismiss
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Powered by <a href="https://www.currencyconverterapi.com">Freecurrencyconverterapi</a></span>
+    </div>
+  </footer>
+  <script src="js/db.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
